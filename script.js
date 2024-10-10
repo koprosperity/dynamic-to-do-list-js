@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
             saveTaskToStorage(taskText);
         }
 
-        // Clear the input field after adding the task
+        // Clear the task input field after adding the task
         taskInput.value = '';
     }
 
@@ -81,14 +81,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Event listener for adding a task when the button is clicked
     addButton.addEventListener('click', () => {
-        const taskText = taskInput.value;
+        const taskText = taskInput.value.trim(); // Use trim to get the value without whitespace
         addTask(taskText); // By default, save = true
     });
 
     // Event listener for adding a task when the 'Enter' key is pressed
     taskInput.addEventListener('keypress', (event) => {
         if (event.key === 'Enter') {
-            const taskText = taskInput.value;
+            const taskText = taskInput.value.trim(); // Use trim to get the value without whitespace
             addTask(taskText); // By default, save = true
         }
     });
